@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Notifications page</title>
+    <link rel="stylesheet" href="./style/styles.css" />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container__top">
+        <span class="bold">Notifications <span class="notification-count">3</span></span>
+        <button class="notification-read">Mark all as read</button>
+      </div>
+
+      <div class="container-notification not-read">
+        <img src="./assets/images/avatar-mark-webber.webp" class="container-notification__avatar" alt="" />
+        <div>
+          <p><span class="container-notification__user">Mark Webber</span></span>
+          <span class="container-notification__activity"
+            >reacted to your recent post
+            <span class="container-notification__post bold"
+              >My first tournament today!</span
+            ></p
+          >
+          <span class="container-notification__time-ago">1m ago</span>
+        </div>
+      </div>
+      <div class="container-notification not-read">
+        <img src="./assets/images/avatar-angela-gray.webp" class="container-notification__avatar" alt="" />
+        <div>
+          <p 
+            ><span class="container-notification__user">Angela Gray</span>
+            <span class="container-notification__activity"
+              >followed you</span
+            ></p
+          >
+          <span class="container-notification__time-ago">5m ago</span>
+        </div>
+      </div>
+      <div class="container-notification not-read">
+        <img src="./assets/images/avatar-jacob-thompson.webp" class="container-notification__avatar" alt="" />
+        <div>
+          <p
+            ><span class="container-notification__user">Jacob Thompson</span>
+            <span class="container-notification__activity"
+              >has joined your group <span class="container-notification__group bold">Chess Club</span></span
+            ></p
+          >
+          <span class="container-notification__time-ago">1 day ago</span>
+        </div>
+      </div>
+      <div class="container-notification">
+        <img src="./assets/images/avatar-rizky-hasanuddin.webp" class="container-notification__avatar" alt="" />
+        <div>
+          <p
+            ><span class="container-notification__user">Rizky Hasanuddin</span>
+            <span class="container-notification__activity"
+              >sent you a private message</span
+            ></p
+          >
+          <span class="container-notification__time-ago">5 days ago</span>
+          <p class="container-notification__message">Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.
+          </p>
+        </div>
+      </div>
+      <div class="container-notification">
+        <img src="./assets/images/avatar-kimberly-smith.webp" class="container-notification__avatar" alt="" />
+        <div class="container-notification__wrap">
+          <div>
+            <p
+              ><span class="container-notification__user">Kimberly Smith</span>
+              <span class="container-notification__activity"
+                >commented on your picture</span
+              ></p
+            >
+            <span class="container-notification__time-ago">1 week ago</span>
+          </div>
+          <img src="./assets/images/image-chess.webp" alt="">
+        </div>
+      </div>
+      <div class="container-notification">
+        <img src="./assets/images/avatar-nathan-peterson.webp" class="container-notification__avatar" alt="" />
+        <div>
+          <p
+            ><span class="container-notification__user">Nathan Peterson</span>
+            <span class="container-notification__activity"
+              >reacted to your recent <span class="container-notification__post bold">post 5 end-game strategies to increase
+                your win rate</span></span
+            ></p
+          >
+          <span class="container-notification__time-ago">2 weeks ago</span>
+        </div>
+      </div>
+      <div class="container-notification">
+        <img src="./assets/images/avatar-anna-kim.webp" class="container-notification__avatar" alt="" />
+        <div>
+          <p
+            ><span class="container-notification__user">Anna Kim</span>
+            <span class="container-notification__activity"
+              >left the group <span class="container-notification__group bold">Chess Club</span></span
+            ></p
+          >
+          <span class="container-notification__time-ago">2 weeks ago</span>
+        </div>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+
+    <script>
+      const markBtn = document.querySelector('.notification-read')
+      const notificationContainers = document.querySelectorAll('.container-notification')
+      const notificationCount = document.querySelector('.notification-count')
+      markBtn.addEventListener('click', e => {
+        notificationCount.style.display = 'none'
+        notificationContainers.forEach(container => {
+          container.classList.contains('not-read') ? container.classList.remove('not-read') : ''
+        })
+      })
+
+const hasVisitedBefore = localStorage.getItem('hasVisited');
+
+if (!hasVisitedBefore) {
+  localStorage.setItem('hasVisited', 'true');
+  const element = document.querySelector('.container'); 
+  element.classList.add('appear-animation');
+}
+
+    </script>
+  </body>
+</html>

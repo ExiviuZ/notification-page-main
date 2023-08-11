@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+html {
+  color-scheme: dark light;
+}
+
+body {
+  font-size: 14px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  background-color: hsl(0, 0%, 97%);
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+.appear-animation {
+  animation: appear 1s ease-in-out forwards;
+}
+
+.container {
+  background-color: hsl(0, 0%, 100%);
+  width: 100%;
+  max-width: 650px;
+  margin: auto;
+  padding: clamp(1rem, 0.6479rem + 1.5023vw, 2rem);
+  border-radius: 10px;
+  margin-block: clamp(0rem, -1.0563rem + 4.507vw, 3rem);
+}
+.container__top {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: clamp(1rem, 0.912rem + 0.3756vw, 1.25rem);
+}
+
+.notification-count {
+  display: inline-block;
+  background-color: hsl(217, 89%, 25%);
+  color: hsl(0, 0%, 100%);
+  padding: 0.05rem 0.6rem;
+  border-radius: 5px;
+  margin-left: 0.5rem;
+  font-size: clamp(0.75rem, 0.662rem + 0.3756vw, 1rem);
+}
+
+.notification-read {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: hsl(219, 14%, 63%);
+  transition: color 0.25s ease;
+}
+.notification-read:hover {
+  cursor: pointer;
+  color: hsl(217, 89%, 25%);
+}
+
+.container-notification {
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.container-notification > *:nth-child(1) {
+  width: 10%;
+  min-width: 38px;
+  max-width: 48px;
+  align-self: flex-start;
+}
+.container-notification > *:nth-child(2) {
+  width: 90%;
+}
+.container-notification p {
+  position: relative;
+  color: hsl(219, 12%, 42%);
+}
+.container-notification__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: space-between;
+}
+.container-notification__wrap > *:nth-child(2) {
+  cursor: pointer;
+  max-width: 50px;
+}
+.container-notification__user {
+  color: black;
+  font-weight: bold;
+  transition: color 0.25s ease;
+}
+.container-notification__user:hover {
+  cursor: pointer;
+  color: hsl(217, 89%, 25%);
+}
+.container-notification__post {
+  transition: color 0.25s ease;
+}
+.container-notification__post:hover {
+  cursor: pointer;
+  color: hsl(217, 89%, 25%);
+}
+.container-notification__time-ago {
+  color: hsl(219, 14%, 63%);
+}
+.container-notification__group {
+  cursor: pointer;
+  color: hsl(217, 89%, 25%);
+}
+.container-notification__message {
+  margin-top: 0.5rem;
+  padding: 1rem;
+  border: 1px solid hsl(211, 68%, 94%);
+  transition: background-color 0.25s ease;
+}
+.container-notification__message:hover {
+  background-color: hsl(205, 33%, 90%);
+}
+.container-notification.not-read {
+  background: hsl(210, 60%, 98%);
+}
+.container-notification.not-read p::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: hsl(1, 90%, 64%);
+  position: absolute;
+  margin: auto;
+  transform: translateY(100%);
+  margin-left: 0.4rem;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(-5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}/*# sourceMappingURL=styles.css.map */
